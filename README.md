@@ -1,3 +1,39 @@
+## KanbanBoard
+
+This is an implementation of a Kanban board using Typescript, React, and Redux. The Kanban board allows you to create tasks, move tasks, and assign tags to tasks. Use it to track your work!
+
+
+
+## Technologies 🛠️
+
+- [Typescript](https://www.typescriptlang.org/) - JavaScript with syntax for types.
+- [React](https://es.reactjs.org/) - Front-End JavaScript library
+- CSS
+- HTML
+- [Feather Icons](https://feathericons.com/) - Simply beautiful open source icons
+- [Styled Components](https://styled-components.com/) - For component composition and styles
+- [axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
+- [React Router](https://reactrouter.com/web/guides/quick-start) - Library for creating navigations in one page applications in React.
+
+## Features
+
+### Drag and drop columns and task cards
+
+  - User can move their task into different columns to keep track of progress or organise their data
+  - Columns can move freely, allowing users to put their lists in any order they want.
+
+
+
+### Task creation and editable task
+
+  - Each task and list can be created by pressing the add buttons to their respected components
+
+  - Each task and list can be deleted at any time
+
+  - Once clicked, a task will expand into a modal for easy accessibility to read, write and edit.
+
+    
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

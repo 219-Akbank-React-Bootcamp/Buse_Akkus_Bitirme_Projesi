@@ -1,24 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import "./App.css";
+// import LoginForm from "./components/LoginForm";
+// import RegisterForm from "./components/RegisterForm";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+
+import { useLoginContext } from "./contexts/LoginContext/LoginContext";
+
+import BoardApp from "./pages/BoardApp";
+import { BoardProvider } from "./contexts/BoardContext/BoardContext";
 
 function App() {
+  const { isLoggedIn } = useLoginContext();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!isLoggedIn ? (
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+          </Routes>
+        </BrowserRouter>
+      ) : (
+        <BoardProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<BoardApp />} />
+            </Routes>
+          </BrowserRouter>
+        </BoardProvider>
+      )}
     </div>
   );
 }
